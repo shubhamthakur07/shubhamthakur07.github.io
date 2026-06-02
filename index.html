@@ -3,175 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Thakur | Laravel Developer</title>
+    <title>Shubham Thakur | Full-Stack Developer</title>
     <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts for Terminal Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #131a26;
+            --border-color: #1e293b;
+            --accent-laravel: #ff2d20;
+            --accent-vue: #42b883;
+            --text-muted: #94a3b8;
+        }
+
         body {
-            background-color: #121212;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-main);
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
         }
+
+        /* Unique Cyber Terminal Header */
         .navbar {
-            background-color: #1a1a1a !important;
-            border-bottom: 1px solid #2d2d2d;
+            background-color: rgba(11, 15, 25, 0.8) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
         }
-        .text-gradient {
-            background: linear-gradient(45deg, #ff2d20, #4f46e5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .navbar-brand {
+            font-family: 'Fira Code', monospace;
+            letter-spacing: -1px;
         }
+
+        /* Developer Terminal Hero Section */
         .hero-section {
-            padding: 120px 0 80px 0;
-            background: radial-gradient(circle at top right, rgba(255, 45, 32, 0.1), transparent);
+            padding: 160px 0 100px 0;
+            background: radial-gradient(circle at 90% 10%, rgba(255, 45, 32, 0.08), transparent 40%);
         }
-        .card-custom {
-            background-color: #1a1a1a;
-            border: 1px solid #2d2d2d;
+
+        .terminal-window {
+            background-color: #05070c;
+            border: 1px solid var(--border-color);
             border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            font-family: 'Fira Code', monospace;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
         }
+
+        .terminal-header {
+            background-color: #0e131f;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .dot-red { background-color: #ef4444; }
+        .dot-yellow { background-color: #f59e0b; }
+        .dot-green { background-color: #10b981; }
+
+        .terminal-body {
+            padding: 24px;
+            color: #38bdf8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .t-keyword { color: #f43f5e; }
+        .t-string { color: #10b981; }
+        .t-var { color: #fbbf24; }
+        .t-comment { color: #64748b; }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(45deg, var(--accent-laravel), var(--accent-vue));
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0.4;
+            filter: blur(10px);
+        }
+
+        .profile-img-custom {
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            background-color: var(--bg-card);
+            padding: 8px;
+        }
+
+        /* Modern Bento Grid Cards */
+        .card-custom {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .card-custom:hover {
-            transform: translateY(-5px);
-            border-color: #ff2d20;
+            transform: translateY(-6px);
+            border-color: rgba(255, 45, 32, 0.4);
+            box-shadow: 0 12px 24px rgba(255, 45, 32, 0.05);
         }
+
         .project-img {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
-            border-bottom: 1px solid #2d2d2d;
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
         }
+
+        .card-custom:hover .project-img {
+            filter: grayscale(0%);
+        }
+
+        /* Tech Tags */
         .badge-skill {
-            background-color: #2d2d2d;
-            color: #fff;
-            font-size: 0.95rem;
-            padding: 10px 16px;
-            border-radius: 30px;
-            border: 1px solid #3d3d3d;
+            background-color: #1e293b;
+            color: #cbd5e1;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid #334155;
             display: inline-block;
-            margin: 5px;
+            margin: 4px;
         }
-        .laravel-color { color: #ff2d20; }
-        .vue-color { color: #42b883; }
-        .php-color { color: #777bb4; }
-        .boot-color { color: #7952b3; }
-        
+
+        .tag-mini {
+            background-color: rgba(30, 41, 59, 0.5);
+            color: #94a3b8;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .section-title {
+            font-weight: 800;
+            letter-spacing: -1px;
+            position: relative;
+        }
+
+        /* Contact Pill Box */
+        .contact-glow-card {
+            background: linear-gradient(135deg, #131a26 0%, #0f141d 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .btn-laravel {
+            background-color: var(--accent-laravel);
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+            padding: 12px 28px;
+            transition: background 0.2s ease;
+        }
+
+        .btn-laravel:hover {
+            background-color: #e02214;
+            color: white;
+        }
+
         footer {
-            background-color: #0a0a0a;
-            border-top: 1px solid #2d2d2d;
+            background-color: #05070c;
+            border-top: 1px solid var(--border-color);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Dynamic Blur Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-gradient" href="#">ST</a>
+            <a class="navbar-brand fw-bold text-white" href="#"><span style="color: var(--accent-laravel);">&lt;</span>ST <span style="color: var(--accent-vue);"/>&gt;</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">/home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">/about</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">/skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">/projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">/contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-<section id="home" class="hero-section">
-    <div class="container">
-        <div class="row align-items-center min-vh-75 py-5">
-            <!-- Text Content -->
-            <div class="col-lg-7">
-                <h5 class="text-uppercase tracking-wider text-muted mb-3">Welcome to my portfolio</h5>
-                <h1 class="display-3 fw-bold mb-3">Hi, I'm <span class="text-gradient">Shubham Thakur</span></h1>
-                <h2 class="h3 text-muted mb-4">Full-Stack Web Developer specializing in Laravel & Vue.js</h2>
-                <p class="lead text-secondary mb-5" style="max-width: 600px;">
-                    I build robust, scalable web applications combining backend architectural integrity with interactive, responsive user interfaces.
-                </p>
-                <div>
-                    <a href="#projects" class="btn btn-outline-light btn-lg px-4 me-3 border-secondary">View Work</a>
-                    <a href="#contact" class="btn btn-danger btn-lg px-4"><i class="bi bi-telephone me-2"></i>Contact Me</a>
+    <!-- Interactive Terminal Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-75 g-5">
+                <div class="col-lg-7">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="terminal-dot dot-red"></span>
+                            <span class="terminal-dot dot-yellow"></span>
+                            <span class="terminal-dot dot-green"></span>
+                            <span class="text-muted small ms-2" style="font-family: 'Fira Code', monospace;">developer-manifesto.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <span class="t-comment">// Welcome to the workspace</span><br>
+                            <span class="t-keyword">const</span> <span class="t-var">developer</span> = [<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;name: <span class="t-string">"Shubham Thakur"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;role: <span class="t-string">"Full-Stack Web Developer"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;speciality: <span class="t-string">"Laravel Ecosystem & Vue.js Frontends"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;experience: <span class="t-string">"1+ Years Professional"</span><br>
+                            ];<br><br>
+                            <span class="t-keyword">if</span> (<span class="t-var">developer</span>.buildsScalableApps) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;echo <span class="t-string">"Architecting clean codebases with reliable backends."</span>;<br>
+                            }
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <a href="#projects" class="btn btn-laravel btn-lg me-3">Explore Microservices</a>
+                        <a href="#contact" class="btn btn-outline-secondary text-white btn-lg border-secondary"><i class="bi bi-terminal me-2"></i>Get in Touch</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5 text-center">
+                    <div class="profile-wrapper">
+                        <img src="./images/shared_image__1_-removebg-preview.png" alt="Shubham Thakur" class="img-fluid profile-img-custom" style="max-height: 380px; object-fit: cover;">
+                    </div>
                 </div>
             </div>
-            <!-- Profile Image Added Here -->
-            <div class="col-lg-5 text-center mt-5 mt-lg-0">
-                <img src="./images/shared_image__1_-removebg-preview.png" alt="Shubham Thakur" class="img-fluid rounded-circle border border-secondary p-2" style="max-height: 400px; object-fit: cover;">
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 my-5">
+    <!-- Clean Abstract About Section -->
+    <section id="about" class="py-5 my-4">
         <div class="container">
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-4">
-                    <h2 class="fw-bold mb-4">About Me</h2>
-                    <div class="p-1 bg-gradient" style="width: 60px; height: 4px; background: linear-gradient(45deg, #ff2d20, #4f46e5);"></div>
+                    <h2 class="section-title text-white display-5">Execution<br>Profile</h2>
+                    <div class="mt-3" style="width: 40px; height: 4px; background-color: var(--accent-laravel);"></div>
                 </div>
                 <div class="col-lg-8">
-                    <p class="fs-5 text-secondary">
-                        With over **1 year of professional experience**, I focus on building efficient server-side architectures and translating elegant designs into clean, functional code. 
+                    <p class="fs-5 text-secondary" style="line-height: 1.8;">
+                        With an established foundation over **1 year of professional development**, I specialize in building structural integrity on the server side while translating dynamic requirements into reactive, beautiful user experiences. 
                     </p>
-                    <p class="text-secondary">
-                        My primary technical routine revolves around writing testable PHP within the Laravel ecosystem while wiring up dynamic, component-driven reactive layers using Vue.js on the frontend.
+                    <p class="text-muted" style="line-height: 1.7;">
+                        My technical flow centers around writing highly testable components within the modern Laravel framework environment. Simultaneously, I construct smooth, state-driven interfaces using Vue.js to make applications fast, modular, and cleanly decoupled.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-opacity-25 bg-dark">
-        <div class="container">
-            <h2 class="fw-bold text-center mb-5">Technical Toolkit</h2>
+    <!-- Futuristic Skill Matrix Section -->
+    <section id="skills" class="py-5" style="background-color: #090d16;">
+        <div class="container py-4">
+            <h2 class="section-title text-center text-white mb-5">Engineered Tech Stack</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <div class="badge-skill"><i class="bi bi-bootstrap-fill boot-color me-2"></i>Bootstrap</div>
-                    <div class="badge-skill"><i class="bi bi-filetype-php php-color me-2"></i>PHP</div>
-                    <div class="badge-skill"><i class="bi bi-box-seam laravel-color me-2"></i>Laravel</div>
-                    <div class="badge-skill"><i class="bi bi-vimeo vue-color me-2"></i>Vue.js</div>
-                    <div class="badge-skill"><i class="bi bi-database me-2"></i>MySQL</div>
-                    <div class="badge-skill"><i class="bi bi-git me-2"></i>Git & GitHub</div>
-                    <div class="badge-skill"><i class="bi bi-code-slash me-2"></i>REST APIs</div>
+                    <div class="badge-skill"><i class="bi bi-box-seam text-danger me-2"></i>Laravel</div>
+                    <div class="badge-skill"><i class="bi bi-filetype-php text-primary me-2"></i>PHP</div>
+                    <div class="badge-skill"><i class="bi bi-hexagon text-success me-2"></i>Vue.js</div>
+                    <div class="badge-skill"><i class="bi bi-bootstrap-fill text-info me-2"></i>Bootstrap</div>
+                    <div class="badge-skill"><i class="bi bi-database text-warning me-2"></i>MySQL</div>
+                    <div class="badge-skill"><i class="bi bi-git text-white me-2"></i>Git Engine</div>
+                    <div class="badge-skill"><i class="bi bi-cloud-arrow-up text-secondary me-2"></i>REST Environments</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Bento-Style Project Catalog -->
     <section id="projects" class="py-5 my-5">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5">Featured Applications</h2>
+            <h2 class="section-title text-center text-white mb-5">Production Microservices</h2>
             <div class="row g-4">
                 
                 <!-- Project 1: River Rafting -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-custom h-100">
-                        <!-- Project Image Placeholder -->
                         <img src="https://via.placeholder.com/600x400" alt="River Rafting Booking Platform" class="project-img">
                         <div class="p-4 d-flex flex-column justify-content-between h-100">
                             <div>
-                                <div class="d-flex justify-content-between align-items-start mb-2">
-                                    <h4 class="fw-bold mb-2 text-white">River Rafting Himachal</h4>
-                                    <a href="https://github.com/shubhamthakur07/rafting-booking" target="_blank" class="text-secondary"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="fw-bold mb-0 text-white fs-5">River Rafting Himachal</h4>
+                                    <a href="https://github.com/shubhamthakur07/rafting-booking" target="_blank" class="text-muted"><i class="bi bi-arrow-up-right-circle fs-4 text-danger"></i></a>
                                 </div>
-                                <p class="text-secondary small">A comprehensive online booking engine and custom package management platform for a regional adventure rafting business.</p>
+                                <p class="text-muted small">An enterprise online reservation engine built with customized logic algorithms to handle regional adventure rafting bookings effortlessly.</p>
                             </div>
-                            <div class="pt-3">
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">Laravel</span>
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">Bootstrap</span>
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">MySQL</span>
+                            <div class="pt-3 d-flex gap-2 flex-wrap">
+                                <span class="tag-mini">Laravel</span>
+                                <span class="tag-mini">Bootstrap</span>
+                                <span class="tag-mini">MySQL</span>
                             </div>
                         </div>
                     </div>
@@ -180,45 +324,42 @@
                 <!-- Project 2: CelebBio -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-custom h-100">
-                        <!-- Project Image Placeholder -->
                         <img src="https://via.placeholder.com/600x400" alt="CelebBio Platform" class="project-img">
                         <div class="p-4 d-flex flex-column justify-content-between h-100">
                             <div>
-                                <div class="d-flex justify-content-between align-items-start mb-2">
-                                    <h4 class="fw-bold mb-2 text-white">CelebBio Portal</h4>
-                                    <a href="https://github.com/shubhamthakur07/bio-site" class="text-secondary"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="fw-bold mb-0 text-white fs-5">CelebBio Portal</h4>
+                                    <a href="https://github.com/shubhamthakur07/bio-site" class="text-muted"><i class="bi bi-arrow-up-right-circle fs-4 text-danger"></i></a>
                                 </div>
-                                <p class="text-secondary small">A structured directory platform optimized for media deliverability, content management hierarchies, and clean SEO routing structures.</p>
+                                <p class="text-muted small">A unified biographical data aggregation system built to handle heavy relational media arrays with strict indexing and fluid SEO optimization routing.</p>
                             </div>
-                            <div class="pt-3">
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">PHP</span>
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">Laravel</span>
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">Tailwind</span>
+                            <div class="pt-3 d-flex gap-2 flex-wrap">
+                                <span class="tag-mini">PHP 8.2</span>
+                                <span class="tag-mini">Laravel</span>
+                                <span class="tag-mini">Tailwind</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3: Portfolio Builder -->
-               <!-- Example of a Project Card linking straight to GitHub code -->
+                <!-- Project 3: Construction Innovation -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-custom h-100">
                         <img src="https://via.placeholder.com/600x400" alt="Construction Management Project" class="project-img">
                         <div class="p-4 d-flex flex-column justify-content-between h-100">
                             <div>
-                                <div class="d-flex justify-content-between align-items-start mb-2">
-                                    <h4 class="fw-bold mb-2 text-white">Construction Innovation App</h4>
-                                    <!-- Changing this icon to GitHub and adding your repo link -->
-                                    <a href="https://github.com/shubhamthakur07/constructions-innovation-app" target="_blank" class="text-secondary">
-                                        <i class="bi bi-github fs-5 text-white"></i>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="fw-bold mb-0 text-white fs-5">Construction App</h4>
+                                    <a href="https://github.com/shubhamthakur07/constructions-innovation-app" target="_blank" class="text-muted">
+                                        <i class="bi bi-github fs-4 text-white"></i>
                                     </a>
                                 </div>
-                                <p class="text-secondary small">A CodeIgniter-based application developed for streamlined construction project management and database tracking.</p>
+                                <p class="text-muted small">A business process ecosystem structured inside CodeIgniter designed to handle complex warehouse records, logistical tracking, and real-time ledger audits.</p>
                             </div>
-                            <div class="pt-3">
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">CodeIgniter</span>
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">PHP</span>
-                                <span class="badge bg-dark border border-secondary text-secondary me-1">MySQL</span>
+                            <div class="pt-3 d-flex gap-2 flex-wrap">
+                                <span class="tag-mini">CodeIgniter</span>
+                                <span class="tag-mini">PHP</span>
+                                <span class="tag-mini">Databases</span>
                             </div>
                         </div>
                     </div>
@@ -228,19 +369,23 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-opacity-10 bg-white">
+    <!-- Glassmorphic Terminal Contact Node -->
+    <section id="contact" class="py-5">
         <div class="container text-center py-4">
-            <h2 class="fw-bold mb-3">Let's Connect</h2>
-            <p class="text-secondary mb-5">Are you looking for a dedicated full-stack developer for framework migrations or specialized feature setups?</p>
             <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="p-4 card-custom border border-secondary d-flex align-items-center justify-content-center">
-                        <i class="bi bi-telephone-fill text-gradient fs-3 me-3"></i>
-                        <div class="text-start">
-                            <div class="text-muted small">Call / WhatsApp</div>
-                            <!-- REPLACE THE PLACEHOLDER BELOW WITH YOUR ACTUAL PHONE NUMBER -->
-                            <a href="tel:+919876543210" class="text-white text-decoration-none fw-bold fs-5">+91 82197 95479</a>
+                <div class="col-lg-8">
+                    <div class="contact-glow-card">
+                        <h2 class="fw-bold text-white mb-3 display-6">Initialize Communication</h2>
+                        <p class="text-muted mb-5" style="max-width: 500px; margin: 0 auto;">Ready to deploy architectural solutions or integrate high-grade application modules for your development projects?</p>
+                        
+                        <div class="d-flex justify-content-center">
+                            <div class="p-3 d-flex align-items-center justify-content-center border-secondary" style="background-color: #0b0f19; border: 1px solid var(--border-color); border-radius: 16px; min-width: 280px;">
+                                <i class="bi bi-whatsapp text-success fs-3 me-3"></i>
+                                <div class="text-start">
+                                    <div class="text-muted small" style="font-family: 'Fira Code', monospace;">Direct Line</div>
+                                    <a href="tel:+918219795479" class="text-white text-decoration-none fw-bold fs-5">+91 82197 95479</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -248,10 +393,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center text-secondary">
+    <!-- Cyber Footer -->
+    <footer class="py-4 text-center text-muted">
         <div class="container">
-            <p class="mb-0">&copy; 2026 Shubham Thakur. Built with Bootstrap.</p>
+            <p class="mb-0">// Built securely inside Git. System status: Online &copy; 2026</p>
         </div>
     </footer>
 
