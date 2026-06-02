@@ -8,7 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google Fonts for Terminal Styling -->
+    <!-- AOS Animation Library CSS CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
@@ -26,9 +28,26 @@
             color: #f8fafc;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* Unique Cyber Terminal Header */
+        /* Matrix Particle Canvas Behind the Code */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.15;
+        }
+
+        .navbar, .hero-section, #about, #skills, #projects, #contact, footer {
+            position: relative;
+            z-index: 1;
+        }
+
         .navbar {
             background-color: rgba(11, 15, 25, 0.8) !important;
             backdrop-filter: blur(12px);
@@ -40,12 +59,12 @@
             letter-spacing: -1px;
         }
 
-        /* Developer Terminal Hero Section */
         .hero-section {
             padding: 160px 0 100px 0;
             background: radial-gradient(circle at 90% 10%, rgba(255, 45, 32, 0.08), transparent 40%);
         }
 
+        /* Terminal Window Entrance Style */
         .terminal-window {
             background-color: #05070c;
             border: 1px solid var(--border-color);
@@ -109,34 +128,33 @@
             padding: 8px;
         }
 
-        /* Modern Bento Grid Cards */
         .card-custom {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .card-custom:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 45, 32, 0.4);
-            box-shadow: 0 12px 24px rgba(255, 45, 32, 0.05);
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(255, 45, 32, 0.5);
+            box-shadow: 0 20px 30px rgba(255, 45, 32, 0.08);
         }
 
         .project-img {
             width: 100%;
             height: 210px;
             object-fit: cover;
-            filter: grayscale(20%);
-            transition: filter 0.3s ease;
+            filter: grayscale(30%);
+            transition: all 0.5s ease;
         }
 
         .card-custom:hover .project-img {
             filter: grayscale(0%);
+            transform: scale(1.04);
         }
 
-        /* Tech Tags */
         .badge-skill {
             background-color: #1e293b;
             color: #cbd5e1;
@@ -147,6 +165,14 @@
             border: 1px solid #334155;
             display: inline-block;
             margin: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .badge-skill:hover {
+            border-color: var(--accent-vue);
+            background-color: #0e1726;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(66, 184, 131, 0.1);
         }
 
         .tag-mini {
@@ -164,7 +190,6 @@
             position: relative;
         }
 
-        /* Contact Pill Box */
         .contact-glow-card {
             background: linear-gradient(135deg, #131a26 0%, #0f141d 100%);
             border: 1px solid var(--border-color);
@@ -179,11 +204,13 @@
             font-weight: 600;
             border-radius: 10px;
             padding: 12px 28px;
-            transition: background 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .btn-laravel:hover {
             background-color: #e02214;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 45, 32, 0.2);
             color: white;
         }
 
@@ -197,10 +224,13 @@
 </head>
 <body>
 
-    <!-- Dynamic Blur Navigation -->
+    <!-- Background Matrix Drop Animation Overlay -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-white" href="#"><span style="color: var(--accent-laravel);">&lt;</span>ST <span style="color: var(--accent-vue);"/>&gt;</a>
+            <a class="navbar-brand fw-bold text-white" href="#"><span style="color: var(--accent-laravel);">&lt;</span>ST <span style="color: var(--accent-vue);">&gt;</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -220,7 +250,7 @@
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center min-vh-75 g-5">
-                <div class="col-lg-7">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <span class="terminal-dot dot-red"></span>
@@ -241,13 +271,13 @@
                             }
                         </div>
                     </div>
-                    <div class="mt-5">
+                    <div class="mt-5" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
                         <a href="#projects" class="btn btn-laravel btn-lg me-3">Explore Microservices</a>
                         <a href="#contact" class="btn btn-outline-secondary text-white btn-lg border-secondary"><i class="bi bi-terminal me-2"></i>Get in Touch</a>
                     </div>
                 </div>
                 
-                <div class="col-lg-5 text-center">
+                <div class="col-lg-5 text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div class="profile-wrapper">
                         <img src="./images/shared_image__1_-removebg-preview.png" alt="Shubham Thakur" class="img-fluid profile-img-custom" style="max-height: 380px; object-fit: cover;">
                     </div>
@@ -260,13 +290,13 @@
     <section id="about" class="py-5 my-4">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="800">
                     <h2 class="section-title text-white display-5">Execution<br>Profile</h2>
                     <div class="mt-3" style="width: 40px; height: 4px; background-color: var(--accent-laravel);"></div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                     <p class="fs-5 text-secondary" style="line-height: 1.8;">
-                        With an established foundation over **1 year of professional development**, I specialize in building structural integrity on the server side while translating dynamic requirements into reactive, beautiful user experiences. 
+                        With an established foundation over **1 year of professional development**, I focus on building structural integrity on the server side while translating dynamic requirements into reactive, beautiful user experiences. 
                     </p>
                     <p class="text-muted" style="line-height: 1.7;">
                         My technical flow centers around writing highly testable components within the modern Laravel framework environment. Simultaneously, I construct smooth, state-driven interfaces using Vue.js to make applications fast, modular, and cleanly decoupled.
@@ -279,9 +309,9 @@
     <!-- Futuristic Skill Matrix Section -->
     <section id="skills" class="py-5" style="background-color: #090d16;">
         <div class="container py-4">
-            <h2 class="section-title text-center text-white mb-5">Engineered Tech Stack</h2>
+            <h2 class="section-title text-center text-white mb-5" data-aos="fade-down" data-aos-duration="600">Engineered Tech Stack</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
+                <div class="col-lg-10 text-center" data-aos="zoom-in" data-aos-duration="800">
                     <div class="badge-skill"><i class="bi bi-box-seam text-danger me-2"></i>Laravel</div>
                     <div class="badge-skill"><i class="bi bi-filetype-php text-primary me-2"></i>PHP</div>
                     <div class="badge-skill"><i class="bi bi-hexagon text-success me-2"></i>Vue.js</div>
@@ -297,11 +327,11 @@
     <!-- Bento-Style Project Catalog -->
     <section id="projects" class="py-5 my-5">
         <div class="container">
-            <h2 class="section-title text-center text-white mb-5">Production Microservices</h2>
+            <h2 class="section-title text-center text-white mb-5" data-aos="fade-up">Production Microservices</h2>
             <div class="row g-4">
                 
                 <!-- Project 1: River Rafting -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="card card-custom h-100">
                         <img src="https://via.placeholder.com/600x400" alt="River Rafting Booking Platform" class="project-img">
                         <div class="p-4 d-flex flex-column justify-content-between h-100">
@@ -322,7 +352,7 @@
                 </div>
 
                 <!-- Project 2: CelebBio -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="card card-custom h-100">
                         <img src="https://via.placeholder.com/600x400" alt="CelebBio Platform" class="project-img">
                         <div class="p-4 d-flex flex-column justify-content-between h-100">
@@ -343,7 +373,7 @@
                 </div>
 
                 <!-- Project 3: Construction Innovation -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div class="card card-custom h-100">
                         <img src="https://via.placeholder.com/600x400" alt="Construction Management Project" class="project-img">
                         <div class="p-4 d-flex flex-column justify-content-between h-100">
@@ -373,7 +403,7 @@
     <section id="contact" class="py-5">
         <div class="container text-center py-4">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-8" data-aos="zoom-in-up" data-aos-duration="800">
                     <div class="contact-glow-card">
                         <h2 class="fw-bold text-white mb-3 display-6">Initialize Communication</h2>
                         <p class="text-muted mb-5" style="max-width: 500px; margin: 0 auto;">Ready to deploy architectural solutions or integrate high-grade application modules for your development projects?</p>
@@ -402,5 +432,58 @@
 
     <!-- Bootstrap 5 JS Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library Script CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // 1. Initialize Scroll Animations 
+        AOS.init({
+            once: true, // Only animate once when scrolling down
+            mirror: false
+        });
+
+        // 2. Performance-Optimized Background Canvas Grid Effect
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.documentElement.scrollHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const nodes = [];
+        const numNodes = Math.min(70, Math.floor(window.innerWidth / 20));
+
+        for (let i = 0; i < numNodes; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 1.5 + 0.5,
+                speedY: Math.random() * 0.4 + 0.1
+            });
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#ff2d20';
+            
+            nodes.forEach(node => {
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fill();
+                
+                node.y += node.speedY;
+                if (node.y > canvas.height) {
+                    node.y = 0;
+                    node.x = Math.random() * canvas.width;
+                }
+            });
+            requestAnimationFrame(drawParticles);
+        }
+        drawParticles();
+    </script>
 </body>
 </html>
