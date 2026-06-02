@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Thakur | Full-Stack Developer</title>
@@ -20,7 +20,7 @@
             --border-color: #1e293b;
             --accent-laravel: #ff2d20;
             --accent-vue: #42b883;
-            --text-secondary: #94a3b8;
+            --text-muted: #94a3b8;
         }
 
         body {
@@ -31,7 +31,6 @@
             position: relative;
         }
 
-        /* Matrix Particle Canvas Behind the Code */
         #particle-canvas {
             position: absolute;
             top: 0;
@@ -40,10 +39,10 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.15;
+            opacity: 0.12;
         }
 
-        .navbar, .hero-section, #about, #skills, #projects, #contact, footer {
+        .navbar, .hero-section, section, footer {
             position: relative;
             z-index: 1;
         }
@@ -64,7 +63,6 @@
             background: radial-gradient(circle at 90% 10%, rgba(255, 45, 32, 0.08), transparent 40%);
         }
 
-        /* Terminal Window Entrance Style */
         .terminal-window {
             background-color: #05070c;
             border: 1px solid var(--border-color);
@@ -144,9 +142,9 @@
 
         .project-img {
             width: 100%;
-            height: 210px;
+            height: 200px;
             object-fit: cover;
-            filter: grayscale(30%);
+            filter: grayscale(25%);
             transition: all 0.5s ease;
         }
 
@@ -172,7 +170,6 @@
             border-color: var(--accent-vue);
             background-color: #0e1726;
             transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(66, 184, 131, 0.1);
         }
 
         .tag-mini {
@@ -187,7 +184,6 @@
         .section-title {
             font-weight: 800;
             letter-spacing: -1px;
-            position: relative;
         }
 
         .contact-glow-card {
@@ -195,7 +191,6 @@
             border: 1px solid var(--border-color);
             border-radius: 24px;
             padding: 40px;
-            position: relative;
         }
 
         .btn-laravel {
@@ -218,7 +213,6 @@
             background-color: #05070c;
             border-top: 1px solid var(--border-color);
             font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -237,6 +231,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">/home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">/experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">/about</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">/skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">/projects</a></li>
@@ -256,30 +251,65 @@
                             <span class="terminal-dot dot-red"></span>
                             <span class="terminal-dot dot-yellow"></span>
                             <span class="terminal-dot dot-green"></span>
-                            <span class="text-secondary small ms-2" style="font-family: 'Fira Code', monospace;">developer-manifesto.sh</span>
+                            <span class="text-muted small ms-2" style="font-family: 'Fira Code', monospace;">developer-manifesto.sh</span>
                         </div>
                         <div class="terminal-body">
-                            <span class="t-comment">// Welcome to the workspace</span><br>
+                            <span class="t-comment">// Current Workspace System State</span><br>
                             <span class="t-keyword">const</span> <span class="t-var">developer</span> = [<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;name: <span class="t-string">"Shubham Thakur"</span>,<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;role: <span class="t-string">"Full-Stack Web Developer"</span>,<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;speciality: <span class="t-string">"Laravel Ecosystem & Vue.js Frontends"</span>,<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;experience: <span class="t-string">"1+ Years Professional"</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;current_role: <span class="t-string">"Web Developer at TechSprinters"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;speciality: <span class="t-string">"Laravel & Vue.js Core Frameworks"</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;experience: <span class="t-string">"1 Year Professional"</span><br>
                             ];<br><br>
-                            <span class="t-keyword">if</span> (<span class="t-var">developer</span>.buildsScalableApps) {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;echo <span class="t-string">"Architecting clean codebases with reliable backends."</span>;<br>
+                            <span class="t-keyword">if</span> (<span class="t-var">developer</span>.isCoding) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;echo <span class="t-string">"Building robust backend pipelines and modular user interfaces."</span>;<br>
                             }
                         </div>
                     </div>
-                    <div class="mt-5 d-flex flex-column flex-sm-row gap-3" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
-                        <a href="#projects" class="btn btn-laravel btn-lg w-100 w-sm-auto text-center">Explore Microservices</a>
-                        <a href="#contact" class="btn btn-outline-secondary text-white btn-lg w-100 w-sm-auto text-center border-secondary"><i class="bi bi-terminal me-2"></i>Get in Touch</a>
+                    
+                    <!-- Fixed Responsive Action Grid Including LinkedIn & CV -->
+                    <div class="mt-5 d-flex flex-column flex-sm-row flex-wrap gap-3" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                        <a href="#projects" class="btn btn-laravel btn-lg w-100 w-sm-auto text-center">Explore Work</a>
+                        
+                        <a href="./Shubham_Thakur_CV.pdf" download="Shubham_Thakur_CV.pdf" class="btn btn-outline-success btn-lg w-100 w-sm-auto text-center border-success text-success">
+                            <i class="bi bi-file-earmark-arrow-down me-2"></i>Download CV
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/shubhambst07" target="_blank" class="btn btn-outline-info btn-lg w-100 w-sm-auto text-center border-info text-info">
+                            <i class="bi bi-linkedin me-2"></i>LinkedIn
+                        </a>
                     </div>
                 </div>
                 
                 <div class="col-lg-5 text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div class="profile-wrapper">
                         <img src="./images/shared_image__1_-removebg-preview.png" alt="Shubham Thakur" class="img-fluid profile-img-custom" style="max-height: 380px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Corporate Experience Timeline -->
+    <section id="experience" class="py-5" style="background-color: #090d16;">
+        <div class="container py-4">
+            <h2 class="section-title text-center text-white mb-5" data-aos="fade-up">Professional Milestones</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="p-4 card-custom border border-secondary" data-aos="fade-up" data-aos-duration="800">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3">
+                            <div>
+                                <h4 class="fw-bold text-white mb-1">Web Developer</h4>
+                                <a href="https://techsprinters.com/" target="_blank" class="text-decoration-none" style="color: var(--accent-laravel);">TechSprinters Platforms <i class="bi bi-box-arrow-up-right small"></i></a>
+                            </div>
+                            <div class="text-md-end mt-2 mt-md-0">
+                                <span class="badge bg-dark border border-secondary p-2 text-muted fw-normal font-monospace">Active Tenure</span>
+                                <div class="text-secondary small mt-1">1 Year Continuous Experience</div>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-0" style="line-height: 1.7;">
+                            Engineering backend architectures and full-stack operational structures inside production software. Managing MVC designs, structured database schemas, and dynamic component rendering parameters to keep network applications performing fluidly at scale.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -296,10 +326,10 @@
                 </div>
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                     <p class="fs-5 text-secondary" style="line-height: 1.8;">
-                        With an established foundation over **1 year of professional development**, I focus on building structural integrity on the server side while translating dynamic requirements into reactive, beautiful user experiences. 
+                        Equipped with an **MSc in Information Technology** from Lovely Professional University, I specialize in building structural integrity on the server side while translating dynamic backend modules into highly responsive user ecosystems.
                     </p>
-                    <p class="text-secondary" style="line-height: 1.7;">
-                        My technical flow centers around writing highly testable components within the modern Laravel framework environment. Simultaneously, I construct smooth, state-driven interfaces using Vue.js to make applications fast, modular, and cleanly decoupled.
+                    <p class="text-muted" style="line-height: 1.7;">
+                        My development logic flows around configuring optimized applications within the modern Laravel and CodeIgniter architectures. Simultaneously, I focus on integrating responsive frontend systems utilizing Tailwind CSS and interactive layers to streamline complex web services.
                     </p>
                 </div>
             </div>
@@ -313,135 +343,200 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center" data-aos="zoom-in" data-aos-duration="800">
                     <div class="badge-skill"><i class="bi bi-box-seam text-danger me-2"></i>Laravel</div>
-                    <div class="badge-skill"><i class="bi bi-filetype-php text-primary me-2"></i>PHP</div>
+                    <div class="badge-skill"><i class="bi bi-filetype-php text-primary me-2"></i>PHP 8.2</div>
                     <div class="badge-skill"><i class="bi bi-hexagon text-success me-2"></i>Vue.js</div>
-                    <div class="badge-skill"><i class="bi bi-bootstrap-fill text-info me-2"></i>Bootstrap</div>
-                    <div class="badge-skill"><i class="bi bi-database text-warning me-2"></i>MySQL</div>
-                    <div class="badge-skill"><i class="bi bi-git text-white me-2"></i>Git Engine</div>
-                    <div class="badge-skill"><i class="bi bi-cloud-arrow-up text-secondary me-2"></i>REST Environments</div>
+                    <div class="badge-skill"><i class="bi bi-braces text-warning me-2"></i>JavaScript (ES6)</div>
+                    <div class="badge-skill"><i class="bi bi-lightning-fill text-info me-2"></i>Tailwind CSS</div>
+                    <div class="badge-skill"><i class="bi bi-bootstrap-fill text-purple me-2" style="color:#7952b3;"></i>Bootstrap</div>
+                    <div class="badge-skill"><i class="bi bi-database text-info me-2"></i>MySQL System</div>
+                    <div class="badge-skill"><i class="bi bi-git text-white me-2"></i>Git Automation</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Bento-Style Project Catalog -->
-  <section id="projects" class="py-5 my-5">
-    <div class="container">
-        <h2 class="section-title text-center text-white mb-5" data-aos="fade-up">Production Microservices</h2>
-        <div class="row g-4">
-            
-            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                <div class="card card-custom h-100">
-                    <img src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=600&q=80" alt="River Rafting Booking Platform" class="project-img">
-                    <div class="p-4 d-flex flex-column justify-content-between h-100">
-                        <div>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="fw-bold mb-0 text-white fs-5">River Rafting Himachal</h4>
-                                <a href="https://github.com/shubhamthakur07/rafting-booking" target="_blank" class="text-secondary"><i class="bi bi-arrow-up-right-circle fs-4 text-danger"></i></a>
+    <section id="projects" class="py-5 my-5">
+        <div class="container">
+            <h2 class="section-title text-center text-white mb-5" data-aos="fade-up">Production Microservices</h2>
+            <div class="row g-4">
+                
+                <!-- Project 1: River Rafting -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="card card-custom h-100">
+                        <img src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=600&q=80" alt="River Rafting Booking Platform" class="project-img">
+                        <div class="p-4 d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="fw-bold mb-0 text-white fs-5">River Rafting Himachal</h4>
+                                    <a href="https://github.com/shubhamthakur07/rafting-booking" target="_blank" class="text-muted"><i class="bi bi-arrow-up-right-circle fs-4 text-danger"></i></a>
+                                </div>
+                                <p class="text-muted small">
+                                    A comprehensive adventure tourism reservation platform featuring an interactive frontend and a robust content management backend. The system enables real-time booking scheduling, dynamic price tier configurations for custom tour packages, and automated testimonial workflows to cleanly manage customer verification and feedback.
+                                </p>
                             </div>
-                            <p class="text-secondary small">
-                                A comprehensive adventure tourism reservation platform featuring an interactive frontend and a robust content management backend. The system enables real-time booking scheduling, dynamic price tier configurations for custom tour packages, and automated testimonial workflows to cleanly manage customer verification and feedback.
-                            </p>
-                        </div>
-                        <div class="pt-3 d-flex gap-2 flex-wrap">
-                            <span class="tag-mini">Laravel</span>
-                            <span class="tag-mini">Bootstrap</span>
-                            <span class="tag-mini">MySQL</span>
+                            <div class="pt-3 d-flex gap-2 flex-wrap">
+                                <span class="tag-mini">Laravel</span>
+                                <span class="tag-mini">Bootstrap</span>
+                                <span class="tag-mini">MySQL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <div class="card card-custom h-100">
-                    <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80" alt="CelebBio Platform" class="project-img">
-                    <div class="p-4 d-flex flex-column justify-content-between h-100">
-                        <div>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="fw-bold mb-0 text-white fs-5">CelebBio Portal</h4>
-                                <a href="https://github.com/shubhamthakur07/bio-site" class="text-secondary"><i class="bi bi-arrow-up-right-circle fs-4 text-danger"></i></a>
+                <!-- Project 2: CelebBio -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="card card-custom h-100">
+                        <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80" alt="CelebBio Platform" class="project-img">
+                        <div class="p-4 d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="fw-bold mb-0 text-white fs-5">CelebBio Portal</h4>
+                                    <a href="https://github.com/shubhamthakur07/bio-site" class="text-muted"><i class="bi bi-arrow-up-right-circle fs-4 text-danger"></i></a>
+                                </div>
+                                <p class="text-muted small">
+                                    A high-performance biographical data aggregation platform optimized for heavy relational content and rapid media deliverability. Features include a customized administrative dashboard for complex data moderation, high-efficiency database indexing, structured content hierarchies, and clean SEO URL routing structures.
+                                </p>
                             </div>
-                            <p class="text-secondary small">
-                                A high-performance biographical data aggregation platform optimized for heavy relational content and rapid media deliverability. Features include a customized administrative dashboard for complex data moderation, high-efficiency database indexing, structured content hierarchies, and clean SEO URL routing structures.
-                            </p>
-                        </div>
-                        <div class="pt-3 d-flex gap-2 flex-wrap">
-                            <span class="tag-mini">PHP 8.2</span>
-                            <span class="tag-mini">Laravel</span>
-                            <span class="tag-mini">Tailwind</span>
+                            <div class="pt-3 d-flex gap-2 flex-wrap">
+                                <span class="tag-mini">PHP 8.2</span>
+                                <span class="tag-mini">Laravel</span>
+                                <span class="tag-mini">Tailwind</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                <div class="card card-custom h-100">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Construction Management Project" class="project-img">
-                    <div class="p-4 d-flex flex-column justify-content-between h-100">
-                        <div>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="fw-bold mb-0 text-white fs-5">Construction App</h4>
-                                <a href="https://github.com/shubhamthakur07/constructions-innovation-app" target="_blank" class="text-secondary">
-                                    <i class="bi bi-github fs-4 text-white"></i>
-                                </a>
+                <!-- Project 3: Construction Innovation -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="card card-custom h-100">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Construction Management Project" class="project-img">
+                        <div class="p-4 d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="fw-bold mb-0 text-white fs-5">Construction App</h4>
+                                    <a href="https://github.com/shubhamthakur07/constructions-innovation-app" target="_blank" class="text-muted">
+                                        <i class="bi bi-github fs-4 text-white"></i>
+                                    </a>
+                                </div>
+                                <p class="text-muted small">
+                                    A business process control engine designed for industrial workflow tracking and logistics coordination. Built with deep modular architecture, the system coordinates multi-tier database migrations, granular warehouse record logging, material inventory updates, and multi-tenant authentication profiles for operational transparency.
+                                </p>
                             </div>
-                            <p class="text-secondary small">
-                                A business process control engine designed for industrial workflow tracking and logistics coordination. Built with deep modular architecture, the system coordinates multi-tier database migrations, granular warehouse record logging, material inventory updates, and multi-tenant authentication profiles for operational transparency.
-                            </p>
-                        </div>
-                        <div class="pt-3 d-flex gap-2 flex-wrap">
-                            <span class="tag-mini">CodeIgniter</span>
-                            <span class="tag-mini">PHP</span>
-                            <span class="tag-mini">Databases</span>
+                            <div class="pt-3 d-flex gap-2 flex-wrap">
+                                <span class="tag-mini">CodeIgniter</span>
+                                <span class="tag-mini">PHP</span>
+                                <span class="tag-mini">Databases</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- Project 4: Text Master -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="card card-custom h-100">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80" alt="Text Master Utility" class="project-img">
+                        <div class="p-4 d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="fw-bold mb-0 text-white fs-5">Text Master Utility</h4>
+                                    <a href="#" class="text-muted"><i class="bi bi-arrow-up-right-circle fs-4 text-success"></i></a>
+                                </div>
+                                <p class="text-muted small">
+                                    An interactive React web engine constructed to parse alphanumeric arrays cleanly. Integrates structural algorithms for instant word/character auditing, processing reading metrics telemetry, and asynchronous layout clipboard synchronization routines.
+                                </p>
+                            </div>
+                            <div class="pt-3 d-flex gap-2 flex-wrap">
+                                <span class="tag-mini">React JS</span>
+                                <span class="tag-mini">JavaScript</span>
+                                <span class="tag-mini">UI Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Razorpay Clone -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="card card-custom h-100">
+                        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80" alt="Payment Gateway UI Clone" class="project-img">
+                        <div class="p-4 d-flex flex-column justify-content-between h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="fw-bold mb-0 text-white fs-5">Fintech Core Layout</h4>
+                                    <a href="#" class="text-muted"><i class="bi bi-arrow-up-right-circle fs-4 text-success"></i></a>
+                                </div>
+                                <p class="text-muted small">
+                                    A pixel-perfect, high-fidelity replication of a payment gateway dashboard interface. Focused strictly on responsive utility design rules using Tailwind CSS grid spacing models, custom component animations, and smooth visual transition systems.
+                                </p>
+                            </div>
+                            <div class="pt-3 d-flex gap-2 flex-wrap">
+                                <span class="tag-mini">Tailwind CSS</span>
+                                <span class="tag-mini">HTML5</span>
+                                <span class="tag-mini">ES6 Scripts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- Glassmorphic Terminal Contact Node -->
     <section id="contact" class="py-5">
-    <div class="container text-center py-4">
-        <div class="row justify-content-center">
-            <div class="col-lg-10" data-aos="zoom-in-up" data-aos-duration="800">
-                <div class="contact-glow-card">
-                    <h2 class="fw-bold text-white mb-3 display-6">Initialize Communication</h2>
-                    <p class="text-secondary mb-5" style="max-width: 500px; margin: 0 auto;">Ready to deploy architectural solutions or integrate high-grade application modules for your development projects?</p>
-                    
-                    <div class="row g-3 justify-content-center">
-                        <div class="col-md-6 col-lg-5">
-                            <div class="p-3 d-flex align-items-center justify-content-start border-secondary h-100" style="background-color: #0b0f19; border: 1px solid var(--border-color); border-radius: 16px;">
-                                <i class="bi bi-whatsapp text-success fs-3 me-3 ms-2"></i>
-                                <div class="text-start">
-                                    <div class="text-secondary small" style="font-family: 'Fira Code', monospace;">Direct Line</div>
-                                    <a href="tel:+918219795479" class="text-white text-decoration-none fw-bold fs-5">+91 82197 95479</a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="container text-center py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="zoom-in-up" data-aos-duration="800">
+                    <div class="contact-glow-card">
+                        <h2 class="fw-bold text-white mb-3 display-6">Initialize Communication</h2>
+                        <p class="text-muted mb-5" style="max-width: 500px; margin: 0 auto;">Ready to deploy architectural solutions or integrate high-grade application modules for your development projects?</p>
                         
-                        <div class="col-md-6 col-lg-5">
-                            <div class="p-3 d-flex align-items-center justify-content-start border-secondary h-100" style="background-color: #0b0f19; border: 1px solid var(--border-color); border-radius: 16px;">
-                                <i class="bi bi-linkedin text-info fs-3 me-3 ms-2"></i>
-                                <div class="text-start">
-                                    <div class="text-secondary small" style="font-family: 'Fira Code', monospace;">Professional Network</div>
-                                    <a href="https://linkedin.com/in/shubhamst07" target="_blank" class="text-info text-decoration-none fw-bold fs-5">shubham-thakur</a>
+                        <!-- Balanced Contact Cards Grid -->
+                        <div class="row g-3 justify-content-center">
+                            <!-- WhatsApp Connection -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 d-flex align-items-center justify-content-start border-secondary h-100" style="background-color: #0b0f19; border: 1px solid var(--border-color); border-radius: 16px;">
+                                    <i class="bi bi-whatsapp text-success fs-3 me-3 ms-2"></i>
+                                    <div class="text-start">
+                                        <div class="text-muted small" style="font-family: 'Fira Code', monospace;">Direct Line</div>
+                                        <a href="tel:+918219795479" class="text-white text-decoration-none fw-bold fs-6">+91 82197 95479</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Email Link -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 d-flex align-items-center justify-content-start border-secondary h-100" style="background-color: #0b0f19; border: 1px solid var(--border-color); border-radius: 16px;">
+                                    <i class="bi bi-envelope-at text-danger fs-3 me-3 ms-2"></i>
+                                    <div class="text-start">
+                                        <div class="text-muted small" style="font-family: 'Fira Code', monospace;">Secure Mail</div>
+                                        <a href="mailto:Shubhamthakurst07@gmail.com" class="text-white text-decoration-none fw-bold fs-6" style="font-size:0.85rem !important;">Shubhamthakurst07@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LinkedIn Connection -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 d-flex align-items-center justify-content-start border-secondary h-100" style="background-color: #0b0f19; border: 1px solid var(--border-color); border-radius: 16px;">
+                                    <i class="bi bi-linkedin text-info fs-3 me-3 ms-2"></i>
+                                    <div class="text-start">
+                                        <div class="text-muted small" style="font-family: 'Fira Code', monospace;">Professional</div>
+                                        <a href="https://www.linkedin.com/in/shubhambst07" target="_blank" class="text-info text-decoration-none fw-bold fs-6">shubhambst07</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Cyber Footer -->
-    <footer class="py-4 text-center text-secondary">
+    <footer class="py-4 text-center text-muted">
         <div class="container">
-            <p class="mb-0">// Built securely inside Git. System status: Online &copy; 2026</p>
+            <p class="mb-0">// System Location: Shimla, HP | Core Status: Active &copy; 2026</p>
         </div>
     </footer>
 
@@ -452,13 +547,11 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        // 1. Initialize Scroll Animations 
         AOS.init({
-            once: true, // Only animate once when scrolling down
+            once: true,
             mirror: false
         });
 
-        // 2. Performance-Optimized Background Canvas Grid Effect
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -470,14 +563,14 @@
         window.addEventListener('resize', resizeCanvas);
 
         const nodes = [];
-        const numNodes = Math.min(70, Math.floor(window.innerWidth / 20));
+        const numNodes = Math.min(60, Math.floor(window.innerWidth / 25));
 
         for (let i = 0; i < numNodes; i++) {
             nodes.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
                 radius: Math.random() * 1.5 + 0.5,
-                speedY: Math.random() * 0.4 + 0.1
+                speedY: Math.random() * 0.3 + 0.1
             });
         }
 
